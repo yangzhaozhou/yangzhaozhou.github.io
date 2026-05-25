@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>我的程序员博客</title>
-</head>
-<body>
-    <h1>Oliver 的博客</h1>
-    <p>GitHub Pages 搭建成功！</p>
-</body>
-</html>
+---
+layout: home
+---
+
+<h1>欢迎来到我的技术博客</h1>
+<p>记录编程学习、后端开发、工具使用心得</p>
+
+<h2>最新文章</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
